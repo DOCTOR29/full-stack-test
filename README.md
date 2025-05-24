@@ -45,3 +45,64 @@ Please answer the following questions in a markdown file called <code>Answers to
 	<li>How would you track down a performance issue in production? Have you ever had to do this?</li>
 	<li>Please describe yourself using JSON.</li>
 </ul>
+# Answers to Technical Questions
+
+---
+
+## 1. How long did you spend on the coding test? What would you add to your solution if you had more time? If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.
+
+I spent approximately 2days  on the coding test. My focus was on delivering a clean, functional, and maintainable solution within the time constraints.
+
+If I had more time, I would have:
+- Added comprehensive unit and integration tests using a testing framework .
+- Improved error handling and edge case coverage.
+- Applied performance optimizations (e.g., memoization or algorithmic improvements where applicable).
+- Enhanced the user experience with better UI/UX if it involved frontend components.
+- Written thorough documentation for easier onboarding and maintenance.
+
+---
+
+## 2. How would you track down a performance issue in production? Have you ever had to do this?
+
+Yes, I have tracked down performance issues in production in the past. Here’s the general approach I follow:
+
+
+
+
+
+1. **Optimize**:
+   - Fix database bottlenecks (e.g., missing indexes, N+1 queries).
+   - Introduce caching ( CDN, etc.) where appropriate.
+
+2. **Validate**:
+   - Monitor the application post-deployment to ensure the issue is resolved.
+
+---
+
+## 3. Please describe yourself using JSON.
+
+```json
+{
+  "name": "Naveed Islam",
+  "role": "Full Stack Developer",
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Python",
+    "PostgreSQL",
+    "Docker",
+    "AWS"
+  ],
+  "experience": "4+ years",
+  "interests": [
+    "building scalable web applications",
+    "clean code",
+    "system design",
+    "DevOps practices"
+  ],
+  "location": "Guwahati, India",
+  "availableForRelocation": true,
+  "remoteFriendly": true
+}
