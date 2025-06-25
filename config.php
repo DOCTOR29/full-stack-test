@@ -17,7 +17,6 @@ try {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 ?> 
-//create mysl table 
 
 <!-- CREATE TABLE sections (
     id INT AUTO_INCREMENT PRIMARY KEY,

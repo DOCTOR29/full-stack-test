@@ -15,6 +15,8 @@ foreach ($types as $type) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DelphianLogic in Action</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -29,10 +31,10 @@ foreach ($types as $type) {
         <p class="text-center mb-4 small text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo</p>
         <div class="row justify-content-center align-items-stretch" style="min-height: 500px;">
             <!-- Column 1: Tabs -->
-            <div class="col-md-3">
-                <div class="nav flex-column nav-pills gap-3" id="dlTab" role="tablist" aria-orientation="vertical">
+            <div class="col-md-3 tab-container">
+                <div class=" nav-container me-3  flex-column nav-pills gap-3" id="dlTab" role="tablist" aria-orientation="vertical">
                     <button class="nav-link active d-flex align-items-center" id="tab-learning" data-bs-toggle="pill" data-bs-target="#tabContent-learning" type="button" role="tab" aria-controls="tabContent-learning" aria-selected="true">
-                        <img src="files/images/DL-learning.svg" alt="Learning" class="me-2" width="32"> Learning
+                        <img src="files/images/DL-learning.svg" alt="Learning" class="me-2" width="72"> Learning
                     </button>
                     <button class="nav-link d-flex align-items-center" id="tab-technology" data-bs-toggle="pill" data-bs-target="#tabContent-technology" type="button" role="tab" aria-controls="tabContent-technology" aria-selected="false">
                         <img src="files/images/DL-technology.svg" alt="Technology" class="me-2" width="32"> Technology
@@ -52,9 +54,11 @@ foreach ($types as $type) {
                                 <?php foreach ($sections['learning'] as $i => $slide): ?>
                                 <div class="carousel-item <?= $i === 0 ? 'active' : '' ?> h-100">
                                     <div class="dl-web-slide d-flex flex-column justify-content-center align-items-center h-100">
-                                        <span class="badge bg-info mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
+                                        <span class="badge  mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
                                         <h3 class="text-white text-center"><?= htmlspecialchars($slide['title']) ?></h3>
-                                        <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More <img src="files/images/arrow-right.svg" alt="arrow"></a>
+                                        <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More
+                                             <img src="files/images/arrow-right.svg" class="arrow-right" alt="arrow" >
+                                            </a>
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
@@ -73,9 +77,9 @@ foreach ($types as $type) {
                                 <?php foreach ($sections['technology'] as $i => $slide): ?>
                                 <div class="carousel-item <?= $i === 0 ? 'active' : '' ?> h-100">
                                     <div class="dl-web-slide d-flex flex-column justify-content-center align-items-center h-100">
-                                        <span class="badge bg-info mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
+                                        <span class="badge  mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
                                         <h3 class="text-white text-center"><?= htmlspecialchars($slide['title']) ?></h3>
-                                        <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More <img src="files/images/arrow-right.svg" alt="arrow"></a>
+                                        <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More <img src="files/images/arrow-right.svg"  class="arrow-right" alt="arrow"></a>
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
@@ -94,9 +98,9 @@ foreach ($types as $type) {
                                 <?php foreach ($sections['communication'] as $i => $slide): ?>
                                 <div class="carousel-item <?= $i === 0 ? 'active' : '' ?> h-100">
                                     <div class="dl-web-slide d-flex flex-column justify-content-center align-items-center h-100">
-                                        <span class="badge bg-info mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
+                                        <span class="badge  mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
                                         <h3 class="text-white text-center"><?= htmlspecialchars($slide['title']) ?></h3>
-                                        <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More <img src="files/images/arrow-right.svg" alt="arrow"></a>
+                                        <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More <img src="files/images/arrow-right.svg"  class="arrow-right" alt="arrow"></a>
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
@@ -111,9 +115,9 @@ foreach ($types as $type) {
                 </div>
             </div>
             <!-- Column 3: 1:1 Image -->
-            <div class="col-md-4 d-flex align-items-center justify-content-center">
-                <div class="dl-web-image-wrapper ratio ratio-1x1 w-100" style="max-width: 350px;">
-                    <img src="<?php echo isset($sections['learning'][0]['image']) ? htmlspecialchars($sections['learning'][0]['image']) : 'files/images/DL-Learning-1.jpg'; ?>" alt="Learning Image" class="img-fluid rounded dl-web-image" id="dlWebMainImage">
+            <div class="col-md-4 d-flex  justify-content-center">
+                <div class=" " style="">
+                    <img src="<?php echo isset($sections['learning'][0]['image']) ? htmlspecialchars($sections['learning'][0]['image']) : 'files/images/DL-Learning-1.jpg'; ?>" alt="Learning Image" class=" dl-web-image " id="dlWebMainImage">
                 </div>
             </div>
         </div>
@@ -135,11 +139,12 @@ foreach ($types as $type) {
                             <div class="carousel-inner">
                                 <?php foreach ($sections['learning'] as $i => $slide): ?>
                                 <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
-                                    <div class="dl-slide" style="background-image: url('<?= htmlspecialchars($slide['image']) ?>');">
+                                   
+                                    <div class="dl-slide  style="background-image: url('<?= htmlspecialchars($slide['image']) ?>');">
                                         <div class="dl-slide-content text-white text-center p-4">
-                                            <span class="badge bg-info mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
+                                            <span class="badge  mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
                                             <h4><?= htmlspecialchars($slide['title']) ?></h4>
-                                            <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More <img src="files/images/arrow-right.svg" alt="arrow"></a>
+                                            <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More <img src="files/images/arrow-right.svg" class="arrow-right" alt="arrow"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -169,9 +174,9 @@ foreach ($types as $type) {
                                 <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
                                     <div class="dl-slide" style="background-image: url('<?= htmlspecialchars($slide['image']) ?>');">
                                         <div class="dl-slide-content text-white text-center p-4">
-                                            <span class="badge bg-info mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
+                                            <span class="badge  mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
                                             <h4><?= htmlspecialchars($slide['title']) ?></h4>
-                                            <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More <img src="files/images/arrow-right.svg" alt="arrow"></a>
+                                            <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More <img src="files/images/arrow-right.svg" class="arrow-right" alt="arrow"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -201,9 +206,9 @@ foreach ($types as $type) {
                                 <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
                                     <div class="dl-slide" style="background-image: url('<?= htmlspecialchars($slide['image']) ?>');">
                                         <div class="dl-slide-content text-white text-center p-4">
-                                            <span class="badge bg-info mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
+                                            <span class="badge  mb-2"><?= htmlspecialchars($slide['badge']) ?></span>
                                             <h4><?= htmlspecialchars($slide['title']) ?></h4>
-                                            <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More <img src="files/images/arrow-right.svg" alt="arrow"></a>
+                                            <a href="<?= htmlspecialchars($slide['link']) ?>" class="btn btn-link text-white">Learn More <img src="files/images/arrow-right.svg" class="arrow-right" alt="arrow"></a>
                                         </div>
                                     </div>
                                 </div>
